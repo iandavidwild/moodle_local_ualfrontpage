@@ -17,11 +17,11 @@ $content='';
 //$content .= $OUTPUT->header();
 //$content .= $OUTPUT->heading(get_string('pluginname', 'local_ualfrontpage'));
 
-$hassiteconfig = has_capability('moodle/site:config', $context);
+//$hassiteconfig = has_capability('moodle/site:config', $context);
 
-if($hassiteconfig) {
+//if($hassiteconfig) {
     $content .= ' This will be where you can configure the front page content :)';
-}
+//}
 
 //$content .= $OUTPUT->footer();
 
