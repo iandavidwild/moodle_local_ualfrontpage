@@ -3,6 +3,8 @@
 require_once(dirname(__FILE__) . '/../../config.php');
 require_login(0, false);
 
+global $CFG;
+
 $PAGE->set_url('/local/ualfrontpage/');
 $context = get_context_instance(CONTEXT_SYSTEM);
 $PAGE->set_context($context);
