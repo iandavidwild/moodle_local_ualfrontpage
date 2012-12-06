@@ -23,8 +23,7 @@ if ($hassiteconfig) { // only users with this ability can access these settings
     
     $ADMIN->add('localplugins', $settings);
     
-    //$settings->add(new admin_setting_configtext('notifications_per_page', get_string('notifications_per_page', 'local_yourrecentupdates'),
-                                             //get_string('notifications_per_page_detail', 'local_yourrecentupdates'), 20, PARAM_INT));
+    $settings->add(new admin_setting_configtext('This is a test', 'This is a test'),'This is a test', 20, PARAM_INT));
     
     //$settings->add(new admin_setting_configtext('max_number_of_notifications', get_string('max_number_of_notifications', 'local_yourrecentupdates'),
                                                 //get_string('max_number_of_notifications_detail', 'local_yourrecentupdates'), 0, PARAM_INT));
