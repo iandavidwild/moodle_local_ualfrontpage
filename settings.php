@@ -1,28 +1,31 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../../config.php');
-require_login(0, false);
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-global $CFG, $OUTPUT;
+defined('MOODLE_INTERNAL') || die;
 
-//$PAGE->set_url('/local/ualfrontpage/');
-//$context = get_context_instance(CONTEXT_SYSTEM);
-//$PAGE->set_context($context);
-//$PAGE->set_title(get_string('pluginname', 'local_ualfrontpage'));
-
-//$PAGE->navbar->add(get_string('pluginname', 'local_ualfrontpage'));
-
-$content='';
-
-//$content .= $OUTPUT->header();
-//$content .= $OUTPUT->heading(get_string('pluginname', 'local_ualfrontpage'));
-
-//$hassiteconfig = has_capability('moodle/site:config', $context);
-
-//if($hassiteconfig) {
-    $content .= ' This will be where you can configure the front page content :)';
-//}
-
-//$content .= $OUTPUT->footer();
-
-echo $content;
+if ($hassiteconfig) { // only users with this ability can access these settings
+    
+    $settings = new admin_settingpage('local_ualfrontpage', get_string('pluginname', 'local_ualfrontpage'));
+    
+    $ADMIN->add('localplugins', $settings);
+    
+    //$settings->add(new admin_setting_configtext('notifications_per_page', get_string('notifications_per_page', 'local_yourrecentupdates'),
+                                             //get_string('notifications_per_page_detail', 'local_yourrecentupdates'), 20, PARAM_INT));
+    
+    //$settings->add(new admin_setting_configtext('max_number_of_notifications', get_string('max_number_of_notifications', 'local_yourrecentupdates'),
+                                                //get_string('max_number_of_notifications_detail', 'local_yourrecentupdates'), 0, PARAM_INT));
+}
