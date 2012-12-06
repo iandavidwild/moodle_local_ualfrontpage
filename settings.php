@@ -5,7 +5,7 @@ require_login(0, false);
 
 global $CFG;
 
-$PAGE->set_url('/local/ualfrontpage/');
+//$PAGE->set_url('/local/ualfrontpage/');
 $context = get_context_instance(CONTEXT_SYSTEM);
 $PAGE->set_context($context);
 $PAGE->set_title(get_string('pluginname', 'local_ualfrontpage'));
