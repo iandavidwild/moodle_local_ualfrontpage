@@ -55,7 +55,7 @@ if($hassiteconfig) {
     $dir = $CFG->dataroot .'/filedir/';
     $image_dir = $CFG->dataroot .'/filedir/';
     $existing_files = '';
-    $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
+    $number_of_images = $DB->count_records('mdl_image_rotator', array('status'=>'1'));
     
     $display_order=0;
     if ($number_of_images < 1){
@@ -222,7 +222,6 @@ if(isset($_POST['Save'])){
     $image_width = $_POST['image_width'];
     $image_height = $_POST['image_height'];
     
-    echo $_FILES["file"]["name"];
     $allowedExts = array("JPG", "JPEG", "GIF", "PNG", "jpg", "jpeg", "gif", "png");
     $extension = end(explode(".", $_FILES["file"]["name"]));
     $alt_text= $_POST['alt_text'];
@@ -233,19 +232,19 @@ if(isset($_POST['Save'])){
     && in_array($extension, $allowedExts)) {
         
         if ($_FILES["file"]["error"] > 0){
-            echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+            //echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
         }
         else{
             if (file_exists($dir . $_FILES["file"]["name"])){
-                echo $_FILES["file"]["name"] . " already exists. ";
+                //echo $_FILES["file"]["name"] . " already exists. ";
             }
             else {
                 
-                echo $dir . $_FILES["file"]["name"];
+                //echo $dir . $_FILES["file"]["name"];
                 
                 move_uploaded_file($_FILES["file"]["tmp_name"],
                 $dir . $_FILES["file"]["name"]);
-                echo $OUTPUT->box('Image successfully uploaded!');
+                //echo $OUTPUT->box('Image successfully uploaded!');
                 //echo "Stored in: " . "/local/ualfrontpage/pix/" . $_FILES["file"]["name"];
                 
                 //to save files in to database............
@@ -271,7 +270,7 @@ if(isset($_POST['Save'])){
         }
     }
     else{
-        echo "Invalid file";
+        //echo "Invalid file";
     }
     
     
@@ -282,7 +281,7 @@ if(isset($_POST['Save'])){
 }
 
 if(isset($_POST['Update'])){
-    echo $_FILES["file"]["name"];
+    //echo $_FILES["file"]["name"];
     $allowedExts = array("JPG", "JPEG", "GIF", "PNG", "jpg", "jpeg", "gif", "png");
     $extension = end(explode(".", $_FILES["file"]["name"]));
     $alt_text= $_POST['alt_text'];
@@ -293,16 +292,16 @@ if(isset($_POST['Update'])){
     && in_array($extension, $allowedExts)) {
         
         if ($_FILES["file"]["error"] > 0){
-            echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+            //echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
         }
         else{
             if (file_exists($dir . $_FILES["file"]["name"])){
-                echo $_FILES["file"]["name"] . " already exists. ";
+                //echo $_FILES["file"]["name"] . " already exists. ";
             }
             else{
                 move_uploaded_file($_FILES["file"]["tmp_name"],
                 $dir . $_FILES["file"]["name"]);
-                echo $OUTPUT->box('Image successfully uploaded!');
+                //echo $OUTPUT->box('Image successfully uploaded!');
                 //echo "Stored in: " . "/local/ualfrontpage/pix/" . $_FILES["file"]["name"];
                 
                 //to save files in to database............
@@ -328,7 +327,7 @@ if(isset($_POST['Update'])){
         }
     }
     else{
-        echo "Invalid file";
+        //echo "Invalid file";
     }
 }
 
