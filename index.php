@@ -52,8 +52,8 @@ if($hassiteconfig) {
     //
     
     //$dir = $CFG->wwwroot .'/local/ualfrontpage/pix/';
-    $dir = $CFG->dataroot .'/local/ualfrontpage/pix/';
-    $image_dir = $CFG->dataroot .'/local/ualfrontpage/pix/';
+    $dir = $CFG->dataroot .'/filedir/temp/';
+    $image_dir = $CFG->dataroot .'/filedir/temp/';
     $existing_files = '';
     $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
     
