@@ -230,7 +230,10 @@ if(isset($_POST['Save'])){
             if (file_exists($dir . $_FILES["file"]["name"])){
                 echo $_FILES["file"]["name"] . " already exists. ";
             }
-            else{
+            else {
+                
+                echo $dir . $_FILES["file"]["name"]
+                
                 move_uploaded_file($_FILES["file"]["tmp_name"],
                 $dir . $_FILES["file"]["name"]);
                 echo $OUTPUT->box('Image successfully uploaded!');
