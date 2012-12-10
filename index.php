@@ -58,7 +58,7 @@ if($hassiteconfig) {
     
     
     if ($number_of_images < 1){
-        $existing_files .= get_string('noimage','local_ualfrontpage');
+        $existing_files .= get_string('noimage','theme_ual');
     }else{
         //$row_counter = 1;
         //echo 'There is some images to show....';
@@ -70,7 +70,7 @@ if($hassiteconfig) {
             $existing_files .= html_writer::empty_tag('input', array('type'=>'hidden', 'name'=>'image_id', 'value'=>$record->id));
             $existing_files .= html_writer::start_tag('tr');
                 $existing_files .= html_writer::start_tag('td');
-                    $existing_files .= get_string('imageorder','local_ualfrontpage');
+                    $existing_files .= get_string('imageorder','theme_ual');
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
@@ -92,7 +92,7 @@ if($hassiteconfig) {
             
             $existing_files .= html_writer::start_tag('tr');
                 $existing_files .= html_writer::start_tag('td');
-                    $existing_files .= get_string('filename','local_ualfrontpage');
+                    $existing_files .= get_string('filename','theme_ual');
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
@@ -109,7 +109,7 @@ if($hassiteconfig) {
             
             $existing_files .= html_writer::start_tag('tr');
                 $existing_files .= html_writer::start_tag('td');
-                    $existing_files .= get_string('filewidth','local_ualfrontpage');
+                    $existing_files .= get_string('filewidth','theme_ual');
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
@@ -120,7 +120,7 @@ if($hassiteconfig) {
             
             $existing_files .= html_writer::start_tag('tr');
                 $existing_files .= html_writer::start_tag('td');
-                    $existing_files .= get_string('fileheight','local_ualfrontpage');
+                    $existing_files .= get_string('fileheight','theme_ual');
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
@@ -131,7 +131,7 @@ if($hassiteconfig) {
             
             $existing_files .= html_writer::start_tag('tr');
                 $existing_files .= html_writer::start_tag('td');
-                    $existing_files .= get_string('alttext','local_ualfrontpage');
+                    $existing_files .= get_string('alttext','theme_ual');
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
@@ -155,7 +155,7 @@ if($hassiteconfig) {
                 
                 $content .= html_writer::start_tag('tr'); //this row for selecting image
                     $content .= html_writer::start_tag('td');
-                        $content .= get_string('uploadfilestext','local_ualfrontpage');
+                        $content .= get_string('uploadfilestext','theme_ual');
                     $content .= html_writer::end_tag('td');
                     $content .= html_writer::start_tag('td');
                         $content .= html_writer::empty_tag('input', array('type'=>'file', 'name'=>'file'));
@@ -164,7 +164,7 @@ if($hassiteconfig) {
                 //list($width, $height, $type, $attr) = getimagesize($dir . $_FILES["file"]["name"]);
                 $content .= html_writer::start_tag('tr');//this row for alt text for image
                     $content .= html_writer::start_tag('td');
-                        $content .= get_string('alttext','local_ualfrontpage');    
+                        $content .= get_string('alttext','theme_ual');    
                     $content .= html_writer::end_tag('td');
                     $content .= html_writer::start_tag('td');
                         $content .= html_writer::empty_tag('input', array('type'=>'text', 'name'=>'alt_text'));
@@ -173,21 +173,21 @@ if($hassiteconfig) {
                 
                 $content .= html_writer::start_tag('tr'); //this row for image width
                     $content .= html_writer::start_tag('td');
-                        $content .= get_string('filewidth','local_ualfrontpage');    
+                        $content .= get_string('filewidth','theme_ual');    
                     $content .= html_writer::end_tag('td');
                     $content .= html_writer::start_tag('td');
                         $content .= html_writer::empty_tag('input', array('type'=>'text', 'name'=>'image_width', 'value'=>'540', 'readonly'));
-                        $content .= get_string('px','local_ualfrontpage');
+                        $content .= get_string('px','theme_ual');
                     $content .= html_writer::end_tag('td');
                 $content .= html_writer::end_tag('tr'); //finish row for image width
                 
                 $content .= html_writer::start_tag('tr'); //this row for image height
                     $content .= html_writer::start_tag('td');
-                        $content .= get_string('fileheight','local_ualfrontpage');    
+                        $content .= get_string('fileheight','theme_ual');    
                     $content .= html_writer::end_tag('td');
                     $content .= html_writer::start_tag('td');
                         $content .= html_writer::empty_tag('input', array('type'=>'text', 'name'=>'image_height', 'value'=>'290', 'readonly'));
-                        $content .= get_string('px','local_ualfrontpage');
+                        $content .= get_string('px','theme_ual');
                     $content .= html_writer::end_tag('td');
                 $content .= html_writer::end_tag('tr'); //finish row for image height
                 
