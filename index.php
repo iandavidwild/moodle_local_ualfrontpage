@@ -53,10 +53,6 @@ if($hassiteconfig) {
     
     $dir = $CFG->wwwroot .'/local/ualfrontpage/pix/';
     $image_dir = $CFG->dataroot .'/local/ualfrontpage/pix/';
-    $dh  = opendir($dir);
-    while (false !== ($filename = readdir($dh))) {
-        $files[] = $filename;
-    }
     $existing_files = '';
     $number_of_images = $DB->count_records('image_folder', array('status'=>'1'));
     
