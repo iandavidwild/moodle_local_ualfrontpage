@@ -54,7 +54,7 @@ if($hassiteconfig) {
     $dir = $CFG->wwwroot .'/local/ualfrontpage/pix/';
     $image_dir = $CFG->dataroot .'/local/ualfrontpage/pix/';
     $existing_files = '';
-    $number_of_images = $DB->count_records('image_folder', array('status'=>'1'));
+    $number_of_images = $DB->count_records('{image_rotator}', array('status'=>'1'));
     
     
     if ($number_of_images < 1){
@@ -64,7 +64,7 @@ if($hassiteconfig) {
         //echo 'There is some images to show....';
         $existing_files .= html_writer::start_tag('div');
         $existing_files .= html_writer::start_tag('table' , array('border'=>'1', 'width'=>'800'));
-        $records = $DB->get_records_sql('select * from {image_folder} where status = ?', array('1'));// oder by display_order');
+        $records = $DB->get_records_sql('select * from {image_rotator where status = ?', array('1'));// oder by display_order');
         foreach ($records as $record){ 
             $existing_files .= html_writer::start_tag('form', array('action'=>'index.php','method'=>'post', 'name'=>'edit_image' . $record->id , 'enctype'=>'multipart/form-data'));
             $existing_files .= html_writer::empty_tag('input', array('type'=>'hidden', 'name'=>'image_id', 'value'=>$record->id));
@@ -248,7 +248,7 @@ if(isset($_POST['Save'])){
                 $row->status    = 1;
                 $row->display_order    = $record->display_order+1;
                 if ($width==540 && $height==290){
-                    $table = 'image_folder';
+                    $table = 'mdl_image_rotator';
                     $DB->insert_record($table, $row);
                 }else{
                     echo 'Selected image size is not correct! Please upload different image (widht=540 and height=290)';
