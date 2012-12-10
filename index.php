@@ -258,6 +258,7 @@ if(isset($_POST['Save'])){
                 $row->height    = $image_height;
                 $row->alt_text    = $alt_text;
                 $row->status    = 1;
+                $row->duration    = 3;
                 $row->display_order    = $display_order+1;
                 /*if ($width==540 && $height==290){ */
                     $table = 'image_rotator';
@@ -309,18 +310,19 @@ if(isset($_POST['Update'])){
                 list($width, $height, $type, $attr) = getimagesize($dir . $_FILES["file"]["name"]);
                 $row = new stdClass();
                 //$row->id    = $id;
-                $row->image_name = $_FILES["file"]["name"];
+                $row->image = $_FILES["file"]["name"];
                 $row->width    = $width;
                 $row->height    = $height;
                 $row->alt_text    = $alt_text;
+                $row->duration    = 3;
                 $row->status    = 1;
                 $row->display_order    = $record->display_order+1;
-                if ($width==540 && $height==290){
+                /*if ($width==540 && $height==290){*/
                     $table = 'image_folder';
                     $DB->insert_record($table, $row);
-                }else{
+                /*}else{
                     echo 'Selected image size is not correct! Please upload different image (widht=540 and height=290)';
-                }
+                }*/
                 
             }
         }
