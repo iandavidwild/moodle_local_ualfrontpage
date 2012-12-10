@@ -55,7 +55,7 @@ if($hassiteconfig) {
     $dir = $CFG->dataroot .'/filedir/';
     $image_dir = $CFG->dataroot .'/filedir/';
     $existing_files = '';
-    $number_of_images = $DB->count_records('mdl_image_rotator', array('status'=>'1'));
+    $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
     
     $display_order=0;
     if ($number_of_images < 1){
