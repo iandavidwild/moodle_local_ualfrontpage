@@ -57,7 +57,7 @@ if($hassiteconfig) {
     $existing_files = '';
     $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
     
-    
+    $display_order=0;
     if ($number_of_images < 1){
         $existing_files .= get_string('noimage','theme_ual');
     }else{
@@ -66,7 +66,10 @@ if($hassiteconfig) {
         $existing_files .= html_writer::start_tag('div');
         $existing_files .= html_writer::start_tag('table' , array('border'=>'1', 'width'=>'800'));
         $records = $DB->get_records_sql('select * from mdl_image_rotator where status = ?', array('1'));// oder by display_order');
-        foreach ($records as $record){ 
+        foreach ($records as $record){
+            
+            $display_order=$record->display_order;
+            
             $existing_files .= html_writer::start_tag('form', array('action'=>'index.php','method'=>'post', 'name'=>'edit_image' . $record->id , 'enctype'=>'multipart/form-data'));
             $existing_files .= html_writer::empty_tag('input', array('type'=>'hidden', 'name'=>'image_id', 'value'=>$record->id));
             $existing_files .= html_writer::start_tag('tr');
@@ -212,6 +215,7 @@ if($hassiteconfig) {
 
 //$content .= $number_of_images;
 
+
 if(isset($_POST['Save'])){
     
     echo $_FILES["file"]["name"];
@@ -250,7 +254,7 @@ if(isset($_POST['Save'])){
                 $row->height    = $height;
                 $row->alt_text    = $alt_text;
                 $row->status    = 1;
-                $row->display_order    = $record->display_order+1;
+                $row->display_order    = $display_order+1;
                 if ($width==540 && $height==290){
                     $table = 'image_rotator';
                     $DB->insert_record($table, $row);
