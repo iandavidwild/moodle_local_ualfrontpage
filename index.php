@@ -255,12 +255,12 @@ if(isset($_POST['Save'])){
                 $row->alt_text    = $alt_text;
                 $row->status    = 1;
                 $row->display_order    = $display_order+1;
-                if ($width==540 && $height==290){
+                /*if ($width==540 && $height==290){ */
                     $table = 'image_rotator';
                     $DB->insert_record($table, $row);
-                }else{
+                /*}else{
                     echo 'Selected image size is not correct! Please upload different image (widht=540 and height=290)';
-                }
+                }*/
                 
             }
         }
