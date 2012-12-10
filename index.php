@@ -232,7 +232,7 @@ if(isset($_POST['Save'])){
             }
             else {
                 
-                echo $dir . $_FILES["file"]["name"]
+                echo $dir . $_FILES["file"]["name"];
                 
                 move_uploaded_file($_FILES["file"]["tmp_name"],
                 $dir . $_FILES["file"]["name"]);
