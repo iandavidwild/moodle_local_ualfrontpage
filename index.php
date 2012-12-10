@@ -241,14 +241,14 @@ if(isset($_POST['Save'])){
                 list($width, $height, $type, $attr) = getimagesize($dir . $_FILES["file"]["name"]);
                 $row = new stdClass();
                 //$row->id    = $id;
-                $row->image_name = $_FILES["file"]["name"];
+                $row->image = $_FILES["file"]["name"];
                 $row->width    = $width;
                 $row->height    = $height;
                 $row->alt_text    = $alt_text;
                 $row->status    = 1;
                 $row->display_order    = $record->display_order+1;
                 if ($width==540 && $height==290){
-                    $table = 'mdl_image_rotator';
+                    $table = 'image_rotator';
                     $DB->insert_record($table, $row);
                 }else{
                     echo 'Selected image size is not correct! Please upload different image (widht=540 and height=290)';
