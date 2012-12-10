@@ -218,6 +218,10 @@ if($hassiteconfig) {
 
 if(isset($_POST['Save'])){
     
+    
+    $image_width = $_POST['image_width'];
+    $image_height = $_POST['image_height'];
+    
     echo $_FILES["file"]["name"];
     $allowedExts = array("JPG", "JPEG", "GIF", "PNG", "jpg", "jpeg", "gif", "png");
     $extension = end(explode(".", $_FILES["file"]["name"]));
@@ -250,8 +254,8 @@ if(isset($_POST['Save'])){
                 $row = new stdClass();
                 //$row->id    = $id;
                 $row->image = $_FILES["file"]["name"];
-                $row->width    = $width;
-                $row->height    = $height;
+                $row->width    = $image_width;
+                $row->height    = $image_height;
                 $row->alt_text    = $alt_text;
                 $row->status    = 1;
                 $row->display_order    = $display_order+1;
