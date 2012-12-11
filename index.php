@@ -68,7 +68,7 @@ if($hassiteconfig) {
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td', array('rowspan'=>'4', 'bgcolor'=>'green', 'width'=>'160'));
-                    $image_url = $image_dir . $record->image_name;
+                    $image_url = $image_dir . $record->image;
                     $existing_files .= '<img src="'.$image_url.'">';
                 $existing_files .= html_writer::end_tag('td');
                 
@@ -86,7 +86,7 @@ if($hassiteconfig) {
                 
                 $existing_files .= html_writer::start_tag('td');
                     //display record from database
-                    $existing_files .= $record->image_name;
+                    $existing_files .= $record->image;
                 $existing_files .= html_writer::end_tag('td');
                 
                 $existing_files .= html_writer::start_tag('td');
