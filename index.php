@@ -37,7 +37,7 @@ if($hassiteconfig) {
     //
     
     #$dir = $CFG->dataroot .'/filedir/';
-    $dir = '/theme/ual/pix/';
+    $dir = $CFG->dataroot .'../../docroot/ualmoodle/theme/ual/pix/';
     #$image_dir = $CFG->dataroot .'/filedir/';
     $image_dir = '/theme/ual/pix/';
     $existing_files = '';
