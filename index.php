@@ -29,22 +29,7 @@ if($hassiteconfig) {
     
     ...*/
     
-    $content .= html_writer::start_tag('form', array('action'=>'index.php','method'=>'post', 'name'=>'frmfrontpage'));
-    
-    // News and announcements
-    $content .= html_writer::start_tag('fieldset');
-    $content .= html_writer::start_tag('legend');
-    $content .= get_string('newsandannouncements','local_ualfrontpage');
-    $content .= html_writer::end_tag('legend');
-    $content .= html_writer::start_tag('label', array('for'=>'maxitems'));
-    $content .= get_string('maxnewsitems','local_ualfrontpage');
-    $content .= html_writer::end_tag('label') . ' ';
-    $content .= html_writer::start_tag('input', array('id'=>'maxitems','name'=>'maxitems','type'=>'text'));
-    $content .= html_writer::end_tag('legend');
-    $content .= html_writer::end_tag('fieldset');
-    
-    $content .= html_writer::end_tag('form');
-    
+   
     
     
     //
