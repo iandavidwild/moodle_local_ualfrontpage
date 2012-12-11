@@ -36,9 +36,10 @@ if($hassiteconfig) {
     // Image rotator
     //
     
-    //$dir = $CFG->wwwroot .'/local/ualfrontpage/pix/';
-    $dir = $CFG->dataroot .'/filedir/';
-    $image_dir = $CFG->dataroot .'/filedir/';
+    #$dir = $CFG->dataroot .'/filedir/';
+    $dir = $CFG->wwwroot .'/theme/ual/pix/';
+    #$image_dir = $CFG->dataroot .'/filedir/';
+    $image_dir = $CFG->wwwroot .'/theme/ual/pix/';
     $existing_files = '';
     $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
     
