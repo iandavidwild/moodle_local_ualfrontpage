@@ -37,9 +37,9 @@ if($hassiteconfig) {
     //
     
     #$dir = $CFG->dataroot .'/filedir/';
-    $dir = '../../theme/ual/pix/';
+    $dir = $CFG->dataroot .'../../docroot/ualmoodle/theme/ual/pix/';
     #$image_dir = $CFG->dataroot .'/filedir/';
-    $image_dir = '../../theme/ual/pix/';
+    $image_dir = '../../docroot/ualmoodle/theme/ual/pix/';
     $existing_files = '';
     $number_of_images = $DB->count_records('image_rotator', array('status'=>'1'));
     
