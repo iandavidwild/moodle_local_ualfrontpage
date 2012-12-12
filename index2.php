@@ -8,10 +8,10 @@ global $CFG, $DB;
 
 $PAGE->set_url('/local/ualfrontpage/');
 
-$PAGE->requires->js('../lib/editor/tinymce/tiny_mce/3.5.1.1/tiny_mce.js',true);
+$PAGE->requires->js('/../lib/editor/tinymce/tiny_mce/3.5.1.1/tiny_mce.js',true);
 //$PAGE->requires->js('../lib/editor/tinymce/3.5.1.1/myeditor.js',true);
-$PAGE->requires->css('../lib/editor/tinymce/tiny_mce/3.5.1.1/themes/advanced/skins/default/ui.css', true);
-$PAGE->requires->css('../lib/editor/tinymce/tiny_mce/3.5.1.1/plugins/inlinepopups/skins/clearlooks2/window.css', true);
+$PAGE->requires->css('/../lib/editor/tinymce/tiny_mce/3.5.1.1/themes/advanced/skins/default/ui.css', true);
+$PAGE->requires->css('/../lib/editor/tinymce/tiny_mce/3.5.1.1/plugins/inlinepopups/skins/clearlooks2/window.css', true);
 
 //$PAGE->requires->js('/local/ualfrontpage/tinymce/jscripts/tiny_mce/tiny_mce.js',true);
 //$PAGE->requires->js('/local/ualfrontpage/tinymce/jscripts/tiny_mce/myeditor.js',true);
