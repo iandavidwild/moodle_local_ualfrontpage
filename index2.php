@@ -143,9 +143,6 @@ if($hassiteconfig) {
     $content .= html_writer::end_tag('div');
 }
 
-
-$content .= '<script>tinyMCE.init({ mode : "textareas", });</script>';
-
 $content .= $OUTPUT->footer();
 
 echo $content;
