@@ -8,10 +8,10 @@ global $CFG, $DB;
 
 $PAGE->set_url('/local/ualfrontpage/');
 
-$jslink1 = new moodle_url('../lib/editor/tinymce/tiny_mce/3.5.1.1/tiny_mce.js');
-$jslink2 = new moodle_url('/script/myeditor.js');
-$csslink1 = new moodle_url('../lib/editor/tinymce/tiny_mce/3.5.1.1/themes/advanced/skins/default/ui.css');
-$csslink2 = new moodle_url('../../lib/editor/tinymce/tiny_mce/3.5.1.1/plugins/inlinepopups/skins/clearlooks2/window.css');
+$jslink1 = new moodle_url($CFG->wwwroot.'/lib/editor/tinymce/tiny_mce/3.5.1.1/tiny_mce.js');
+$jslink2 = new moodle_url($CFG->wwwroot.'/local/ualfrontpage/script/myeditor.js');
+$csslink1 = new moodle_url($CFG->wwwroot.'/lib/editor/tinymce/tiny_mce/3.5.1.1/themes/advanced/skins/default/ui.css');
+$csslink2 = new moodle_url($CFG->wwwroot.'/lib/editor/tinymce/tiny_mce/3.5.1.1/plugins/inlinepopups/skins/clearlooks2/window.css');
 
 $PAGE->requires->js($jslink1,true);
 $PAGE->requires->css($jslink2, true);
