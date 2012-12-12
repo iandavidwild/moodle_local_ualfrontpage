@@ -70,22 +70,22 @@ echo $OUTPUT->footer();
 if (isset($_POST['Save'])){
     $section_form_data = $section_form->get_data();
     $mydata = new stdClass();
-    $mydata->section1 = $section_form_data->section1['text'];
-    $mydata->section2 = $section_form_data->section2['text'];
-    $mydata->section3 = $section_form_data->section3['text'];
-    $mydata->section4 = $section_form_data->section4['text'];
+    $mydata->section1 = $section_form_data->section1['html'];
+    $mydata->section2 = $section_form_data->section2['html'];
+    $mydata->section3 = $section_form_data->section3['html'];
+    $mydata->section4 = $section_form_data->section4['html'];
     
     $ex_data = $DB->count_records('section');
     if ($ex_data < 1){
         //save new data
-        $DB->insert_record('section', $mydata);
+        $DB->insert_record('frontpage_section', $mydata);
     }else{
         //save updated data
-        $records = $DB->get_records('section');
+        $records = $DB->get_records('frontpage_section');
         foreach ($records as $record){
             $mydata->id = $record->id;
         }
-        $DB->update_record('section', $mydata);
+        $DB->update_record('frontpage_section', $mydata);
     }
 }
 
