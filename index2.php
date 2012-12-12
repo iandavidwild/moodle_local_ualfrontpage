@@ -28,7 +28,7 @@ class frontpage_section_form extends moodleform {
         global $CFG, $USER, $OUTPUT, $DB;
         $mform =& $this->_form; // Don't forget the underscore!
         
-        $records = $DB->get_records('section');// oder by display_order');
+        $records = $DB->get_records('frontpage_section');// oder by display_order');
         $mform->addElement('header', 'general', get_string('sections', 'local_ualfrontpage'));
         
         foreach ($records as $record){ 
@@ -70,10 +70,10 @@ echo $OUTPUT->footer();
 if (isset($_POST['Save'])){
     $section_form_data = $section_form->get_data();
     $mydata = new stdClass();
-    $mydata->section1 = $section_form_data->section1['html'];
-    $mydata->section2 = $section_form_data->section2['html'];
-    $mydata->section3 = $section_form_data->section3['html'];
-    $mydata->section4 = $section_form_data->section4['html'];
+    $mydata->section1 = $section_form_data->section1['text'];
+    $mydata->section2 = $section_form_data->section2['text'];
+    $mydata->section3 = $section_form_data->section3['text'];
+    $mydata->section4 = $section_form_data->section4['text'];
     
     $ex_data = $DB->count_records('section');
     if ($ex_data < 1){
