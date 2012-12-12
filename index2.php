@@ -75,7 +75,7 @@ if (isset($_POST['Save'])){
     $mydata->section3 = $section_form_data->section3['text'];
     $mydata->section4 = $section_form_data->section4['text'];
     
-    $ex_data = $DB->count_records('section');
+    $ex_data = $DB->count_records('frontpage_section');
     if ($ex_data < 1){
         //save new data
         $DB->insert_record('frontpage_section', $mydata);
