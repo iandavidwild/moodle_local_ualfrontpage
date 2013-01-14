@@ -2,7 +2,6 @@
 
 require('../../config.php');
 require_once('uploaderform.php');
-require_once('lib.php');
 
 require_login();
 if (isguestuser()) {
