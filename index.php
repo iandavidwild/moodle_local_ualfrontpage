@@ -35,6 +35,7 @@ $mform = new upload_image_form(null, array('data'=>$data, 'options'=>$options));
 if ($mform->is_cancelled()) {
     redirect($returnurl);
 } else if ($formdata = $mform->get_data()) {
+    $DB->delete_record('image_rotator');
     $formdata = file_postupdate_standard_filemanager($formdata, 'files', $options, $context, 'local_ualfrontpage', 'images', '1');
     //print_r($formdata);
     
