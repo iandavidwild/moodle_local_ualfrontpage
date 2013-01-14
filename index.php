@@ -5,9 +5,6 @@ require_once('uploaderform.php');
 require_once(dirname(__FILE__) . '/../../lib/filelib.php');
 
 require_login();
-if (isguestuser()) {
-    die();
-}
 
 $returnurl = optional_param('returnurl', '', PARAM_URL);
 
@@ -23,7 +20,6 @@ $PAGE->set_title(get_string('pluginname', 'local_ualfrontpage'));
 $PAGE->set_heading(get_string('pluginname', 'local_ualfrontpage'));
 $PAGE->set_pagelayout('mydashboard');
 $PAGE->navbar->add(get_string('pluginname', 'local_ualfrontpage'));
-//$PAGE->set_pagetype('user-files');
 
 $data = new stdClass();
 $data->returnurl = $returnurl;
@@ -37,19 +33,6 @@ if ($mform->is_cancelled()) {
 } else if ($formdata = $mform->get_data()) {
     $DB->delete_records_select('image_rotator',false);
     $formdata = file_postupdate_standard_filemanager($formdata, 'files', $options, $context, 'local_ualfrontpage', 'images', '1');
-    //print_r($formdata);
-    
-    global $DB;
-    
-    $myfile = new stdClass();
-    
-    foreach ($formdata as $image) {
-        $myfile->image = $image->get_filename();
-        $myfile->status = 1;
-        $myfile->alt_text = "Welcome to UAL Moodle";
-        
-        $DB->insert_record('image_rotator', $myfile);
-    }
     
     redirect($returnurl);
 }
