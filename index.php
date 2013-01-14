@@ -37,7 +37,9 @@ if ($mform->is_cancelled()) {
 } else if ($formdata = $mform->get_data()) {
     $DB->delete_records_select('image_rotator',false);
     $formdata = file_postupdate_standard_filemanager($formdata, 'files', $options, $context, 'local_ualfrontpage', 'images', '1');
-    print_r($formdata);
+    //print_r($formdata);
+    
+    print_r($data);
     
     global $DB;
     
