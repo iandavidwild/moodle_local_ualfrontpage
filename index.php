@@ -2,6 +2,7 @@
 
 require('../../config.php');
 require_once('uploaderform.php');
+require_once(dirname(__FILE__) . '/../../lib/filelib.php');
 
 require_login();
 if (isguestuser()) {
