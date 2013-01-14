@@ -37,6 +37,19 @@ if ($mform->is_cancelled()) {
 } else if ($formdata = $mform->get_data()) {
     $formdata = file_postupdate_standard_filemanager($formdata, 'files', $options, $context, 'local_ualfrontpage', 'images', '1');
     //print_r($formdata);
+    
+    global $DB;
+    
+    $myfile = new stdClass();
+    
+    foreach ($formdata as $image) {
+        $myfile->image = $image->get_filename();
+        $myfile->status = 1;
+        $myfile->alt_text = "Welcome to UAL Moodle";
+        
+        $DB->insert_record('image_rotator', $myfile);
+    }
+    
     redirect($returnurl);
 }
 
